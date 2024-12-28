@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirPods Resale - Affordable Audio Excellence</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0070f3;
+        }
+
+        header nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        header nav a:hover {
+            color: #0070f3;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 70vh;
+            background: url('hero-image.jpg') center center/cover no-repeat;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .hero p {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .hero button {
+            background-color: #0070f3;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hero button:hover {
+            background-color: #005bb5;
+        }
+
+        .products {
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-card .content {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .product-card h3 {
+            margin: 0.5rem 0;
+        }
+
+        .product-card p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+
+        .product-card button {
+            background-color: #0070f3;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">AirPods Resale</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Premium AirPods at Unbeatable Prices</h1>
+        <p>Original Apple AirPods and alternatives like Depak AirPods, all in one place.</p>
+        <button>Shop Now</button>
+    </div>
+
+    <div class="products">
+        <div class="product-card">
+            <img src="airpods1.jpg" alt="Apple AirPods">
+            <div class="content">
+                <h3>Apple AirPods Pro</h3>
+                <p>€199.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="depak1.jpg" alt="Depak AirPods">
+            <div class="content">
+                <h3>Depak AirPods</h3>
+                <p>€49.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="airpods2.jpg" alt="Apple AirPods">
+            <div class="content">
+                <h3>Apple AirPods Max</h3>
+                <p>€549.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 AirPods Resale. All rights reserved.
+    </footer>
+
+    <script>
+        document.querySelectorAll('.product-card button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Item added to cart!');
+            });
+        });
+    </script>
+</body>
+</html>
