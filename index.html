@@ -139,8 +139,8 @@
     <header>
         <div class="logo">PairPods</div>
         <nav>
-            <a href="#">Home</a>
-            <a href="#productsSection">Products</a> <!-- Updated link to scroll to products section -->
+            <a href="#" id="homeLink">Home</a>
+            <a href="#productsSection">Products</a>
             <a href="#" id="cartLink">Cart</a>
             <a href="#">Contact</a>
         </nav>
@@ -155,7 +155,7 @@
     <div class="products" id="productsSection">
         <div class="product-card" data-product="Apple AirPods Pro" data-price="199.99">
             <img src="airpods1.jpg" alt="Apple AirPods">
- <div class="content">
+            <div class="content">
                 <h3>Apple AirPods Pro</h3>
                 <p>2<sup>nd</sup> and 3<sup>rd</sup> generation</p>
                 <p>$199.99</p>
@@ -210,7 +210,7 @@
             const cartWindow = window.open('', '_blank', 'width=400,height=600');
             let cartHTML = `
                 <h1>Your Cart</h1>
-                <table border="1" style="width: 100%; text-align: left; border-collapse: collapse;">
+ <table border="1" style="width: 100%; text-align: left; border-collapse: collapse;">
                     <thead>
                         <tr>
                             <th>Item</th>
@@ -245,6 +245,26 @@
                     </head>
                     <body style="font-family: Arial, sans-serif; padding: 20px;">
                         ${cartHTML}
+                    </body>
+                </html>
+            `);
+        });
+
+        // Open a new window with AirPods resale information when Home is clicked
+        document.getElementById('homeLink').addEventListener('click', (event) => {
+            event.preventDefault();
+            const homeWindow = window.open('', '_blank', 'width=600,height=400');
+            homeWindow.document.write(`
+                <html>
+                    <head>
+                        <title>AirPods Resale Information</title>
+                    </head>
+                    <body style="font-family: Arial, sans-serif; padding: 20px;">
+                        <h1>AirPods Resale Overview</h1>
+                        <p>The resale market for AirPods has seen significant growth, with many users looking to sell their used devices for a fraction of the original price. Factors influencing resale value include condition, model, and demand.</p>
+                        <p>Fake reviews are a common issue in the resale market, often misleading potential buyers. It's crucial to verify the authenticity of reviews and seller ratings before making a purchase.</p>
+                        <p>Ratings for AirPods vary widely, with genuine products receiving high praise for sound quality and comfort, while counterfeit versions often fall short in performance and durability.</p>
+                        <button onclick="window.close()">Close</button>
                     </body>
                 </html>
             `);
