@@ -153,4 +153,67 @@
         </nav>
     </header>
 
-    <div cl
+    <div class="hero">
+        <h1>Premium AirPods at Unbeatable Prices</h1>
+        <p>Original Apple AirPods and alternatives like Depak AirPods, all in one place.</p>
+        <button>Shop Now</button>
+    </div>
+
+    <div class="products">
+        <div class="product-card" data-product="Apple AirPods Pro">
+            <img src="airpods1.jpg" alt="Apple AirPods">
+            <div class="content">
+                <h3>Apple AirPods Pro</h3>
+                <p>$199.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-product="Depak AirPods">
+            <img src="depak1.jpg" alt="Depak AirPods">
+            <div class="content">
+                <h3>Depak AirPods</h3>
+                <p>$49.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-product="Apple AirPods Max">
+            <img src="airpods2.jpg" alt="Apple AirPods">
+            <div class="content">
+                <h3>Apple AirPods Max</h3>
+                <p>$345.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cartItems"></ul>
+    </div>
+
+    <footer>
+        &copy; 2024 AirPods Resale. All rights reserved.
+    </footer>
+
+    <script>
+        const cartLink = document.getElementById('cartLink');
+        const cart = document.querySelector('.cart');
+        const cartItems = document.getElementById('cartItems');
+        const cartContent = [];
+
+        document.querySelectorAll('.product-card button').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const productCard = event.target.closest('.product-card');
+                const productName = productCard.dataset.product;
+                cartContent.push(productName);
+                alert(`${productName} added to cart!`);
+            });
+        });
+
+        cartLink.addEventListener('click', () => {
+            cart.style.display = 'block';
+            cartItems.innerHTML = cartContent.map(item => `<li>${item}</li>`).join('');
+        });
+    </script>
+</body>
+</html>
