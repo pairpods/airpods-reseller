@@ -6,6 +6,13 @@
     <title>PairPods - Affordable Audio Excellence</title>
     <style>
         /* Global Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #707070;
+            background-color: #f4f4f4;
+        }
+
         header {
             display: flex;
             justify-content: space-between;
@@ -67,13 +74,6 @@
             background-color: #005bb5;
         }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #707070;
-            background-color: #707070;
-        }
-
         .products {
             padding: 2rem;
             display: flex;
@@ -115,16 +115,6 @@
             margin: 0.5rem 0;
         }
 
-        .product-card button {
-            background-color: #0070f3;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
         footer {
             color: #000000;
             background-color: #707070;
@@ -139,8 +129,7 @@
     <header>
         <div class="logo">PairPods</div>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Products</a>
+            <a href="#" id="productsLink">Products</a>
             <a href="#" id="cartLink">Cart</a>
             <a href="#">Contact</a>
         </nav>
@@ -190,64 +179,10 @@
             document.getElementById("productsSection").scrollIntoView({ behavior: 'smooth' });
         });
 
-        const cartLink = document.getElementById('cartLink');
-        const cartContent = [];
-
-        // Add items to the cart
-        document.querySelectorAll('.product-card button').forEach(button => {
-            button.addEventListener('click', (event) => {
-                const productCard = event.target.closest('.product-card');
-                const productName = productCard.dataset.product;
-                const productPrice = parseFloat(productCard.dataset.price);
-                cartContent.push({ name: productName, price: productPrice });
-                alert(`${productName} added to cart!`);
-            });
-        });
-
-        // Open the cart in a new window
-        cartLink.addEventListener('click', (event) => {
-            event.preventDefault();
-            const cartWindow = window.open('', '_blank', 'width=400,height=600');
-            let cartHTML = `
-                <h1>Your Cart</h1>
-                <table border="1" style="width: 100%; text-align: left; border-collapse: collapse;">
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
-
-            let total = 0;
-            cartContent.forEach(item => {
-                cartHTML += `
-                    <tr>
-                        <td>${item.name}</td>
-                        <td>$${item.price.toFixed(2)}</td>
-                    </tr>
-                `;
-                total += item.price;
-            });
-
-            cartHTML += `
-                    </tbody>
-                </table>
-                <h2>Total: $${total.toFixed(2)}</h2>
-                <button onclick="window.close()">Close</button>
-            `;
-
-            cartWindow.document.write(`
-                <html>
-                    <head>
-                        <title>Cart</title>
-                    </head>
-                    <body style="font-family: Arial, sans-serif; padding: 20px;">
-                        ${cartHTML}
-                    </body>
-                </html>
-            `);
+        // Smooth scroll to products section from header link
+        document.getElementById("productsLink").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default anchor click behavior
+            document.getElementById("productsSection").scrollIntoView({ behavior: 'smooth' });
         });
     </script>
 </body>
