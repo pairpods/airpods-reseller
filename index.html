@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PairPods - Affordable Audio Excellence</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
     <style>
         /* Global Styles */
         header {
@@ -12,6 +14,7 @@
             align-items: center;
             padding: 1rem 2rem;
             background-color: #000000;
+            border-bottom: 1px solid #000000;
         }
 
         header .logo {
@@ -29,6 +32,47 @@
 
         header nav a:hover {
             color: #000000;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 70vh;
+            background: url('hero-image.jpg') center center/cover no-repeat;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .hero p {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .hero button {
+            background-color: #0070f3;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hero button:hover {
+            background-color: #005bb5;
+        }
+         body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #707070;
+            background-color: #707070; /* Set the main background color */
         }
 
         .products {
@@ -49,6 +93,10 @@
             background-color: #000000;
         }
 
+        .product-card:hover {
+            transform: translateY(-20px);
+        }
+
         .product-card img {
             width: 100%;
             height: auto;
@@ -57,6 +105,15 @@
         .product-card .content {
             padding: 1rem;
             text-align: center;
+        }
+
+        .product-card h3 {
+            margin: 0.5rem 0;
+        }
+
+        .product-card p {
+            margin: 0.5rem 0;
+            color: #666;
         }
 
         .product-card button {
@@ -74,6 +131,7 @@
             padding: 1rem;
             text-align: center;
             font-size: 0.9rem;
+            border-top: 1px solid #CCCCCC;
         }
     </style>
 </head>
@@ -83,29 +141,37 @@
         <nav>
             <a href="#">Home</a>
             <a href="#">Products</a>
-            <a href="#" id="cartLink">Cart</a>
+            <a href="#">About</a>
             <a href="#">Contact</a>
         </nav>
     </header>
 
+    <div class="hero">
+        <h1>Premium AirPods at Unbeatable Prices</h1>
+        <p>Original Apple AirPods and alternatives like Depak AirPods, all in one place.</p>
+        <button>Shop Now</button>
+    </div>
+
     <div class="products">
-        <div class="product-card" data-product="Apple AirPods Pro" data-price="199.99">
+        <div class="product-card">
             <img src="airpods1.jpg" alt="Apple AirPods">
             <div class="content">
                 <h3>Apple AirPods Pro</h3>
+                <p>2<sup2>nd</sup2> and 3<sup2>rd</sup2> generation</p>
                 <p>$199.99</p>
                 <button>Add to Cart</button>
             </div>
         </div>
-        <div class="product-card" data-product="Depak AirPods" data-price="49.99">
+        <div class="product-card">
             <img src="depak1.jpg" alt="Depak AirPods">
             <div class="content">
                 <h3>Depak AirPods</h3>
+            
                 <p>$49.99</p>
                 <button>Add to Cart</button>
             </div>
         </div>
-        <div class="product-card" data-product="Apple AirPods Max" data-price="345.99">
+        <div class="product-card">
             <img src="airpods2.jpg" alt="Apple AirPods">
             <div class="content">
                 <h3>Apple AirPods Max</h3>
@@ -118,8 +184,7 @@
     <footer>
         &copy; 2024 AirPods Resale. All rights reserved.
     </footer>
-
-    <script>
+<script>
         const cartLink = document.getElementById('cartLink');
         const cartContent = [];
 
