@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PairPods - Affordable Audio Excellence</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
     <style>
         /* Global Styles */
         header {
@@ -150,10 +148,10 @@
     <div class="hero">
         <h1>Premium AirPods at Unbeatable Prices</h1>
         <p>Original Apple AirPods and alternatives like Depak AirPods, all in one place.</p>
-        <button>Shop Now</button>
+        <button id="shopNowBtn">Shop Now</button>
     </div>
 
-    <div class="products">
+    <div class="products" id="productsSection">
         <div class="product-card" data-product="Apple AirPods Pro" data-price="199.99">
             <img src="airpods1.jpg" alt="Apple AirPods">
             <div class="content">
@@ -186,6 +184,11 @@
     </footer>
 
     <script>
+        // Smooth scroll to products section
+        document.getElementById("shopNowBtn").addEventListener("click", function() {
+            document.getElementById("productsSection").scrollIntoView({ behavior: 'smooth' });
+        });
+
         const cartLink = document.getElementById('cartLink');
         const cartContent = [];
 
