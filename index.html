@@ -1,230 +1,157 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PairPods - Affordable Audio Excellence</title>
+    <style>
+        /* Global Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #000000;
+            border-bottom: 1px solid #000000;
+        }
 
-<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>PairPods - Affordable Audio Excellence</title> <style> /* Global Styles */ header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background-color: #000000; border-bottom: 1px solid #000000; }
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #CCCCCC;
+        }
 
-    header .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #CCCCCC;
-    }
+        header nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-size: 1rem;
+        }
 
-    header nav a {
-        margin-left: 20px;
-        text-decoration: none;
-        color: #FFFFFF;
-        font-size: 1rem;
-    }
+        header nav a:hover {
+            color: #0070f3;
+        }
 
-    header nav a:hover {
-        color: #0070f3;
-    }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 70vh;
+            background: url('hero-image.jpg') center center/cover no-repeat;
+            color: #fff;
+        }
 
-    .hero {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 70vh;
-        background: url('hero-image.jpg') center center/cover no-repeat;
-        color: #fff;
-    }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
 
-    .hero h1 {
-        font-size: 3rem;
-        margin: 0;
-    }
+        .hero p {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
 
-    .hero p {
-        margin: 1rem 0;
-        font-size: 1.2rem;
-    }
+        .hero button {
+            background-color: #0070f3;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
 
-    .hero button {
-        background-color: #0070f3;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 1rem;
-        cursor: pointer;
-        border-radius: 5px;
-    }
+        .hero button:hover {
+            background-color: #005bb5;
+        }
 
-    .hero button:hover {
-        background-color: #005bb5;
-    }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #707070;
+            background-color: #707070;
+        }
 
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        color: #707070;
-        background-color: #707070;
-    }
+        .products {
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
 
-    .products {
-        padding: 2rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.5rem;
-    }
+        .product-card {
+            width: 300px;
+            border: 1px solid #000000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: #000000;
+            color: #fff;
+        }
 
-    .product-card {
-        width: 300px;
-        border: 1px solid #000000;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        background-color: #000000;
-        color: #fff;
-    }
+        .product-card:hover {
+            transform: translateY(-20px);
+        }
 
-    .product-card:hover {
-        transform: translateY(-20px);
-    }
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
 
-    .product-card img {
-        width: 100%;
-        height: auto;
-    }
+        .product-card .content {
+            padding: 1rem;
+            text-align: center;
+        }
 
-    .product-card .content {
-        padding: 1rem;
-        text-align: center;
-    }
+        .product-card h3 {
+            margin: 0.5rem 0;
+        }
 
-    .product-card h3 {
-        margin: 0.5rem 0;
-    }
+        .product-card p {
+            margin: 0.5rem 0;
+        }
 
-    .product-card p {
-        margin: 0.5rem 0;
-    }
+        .product-card button {
+            background-color: #0070f3;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
 
-    .product-card button {
-        background-color: #0070f3;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 1rem;
-        cursor: pointer;
-        border-radius: 5px;
-    }
+        footer {
+            color: #000000;
+            background-color: #707070;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #707070;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">PairPods</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#productsSection">Products</a> <!-- Updated link to scroll to products section -->
+            <a href="#" id="cartLink">Cart</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 
-    footer {
-        color: #000000;
-        background-color: #707070;
-        padding: 1rem;
-        text-align: center;
-        font-size: 0.9rem;
-        border-top: 1px solid #707070;
-    }
-</style>
-</head> <body> <header> <div class="logo">PairPods</div> <nav> <a href="#">Home</a> <a href="#">Products</a> <a href="#" id="cartLink">Cart</a> <a href="#">Contact</a> </nav> </header>
-
-<div class="hero">
-    <h1>Premium AirPods at Unbeatable Prices</h1>
-    <p>Original Apple AirPods and alternatives like Depak AirPods, all in one place.</p>
-    <button id="shopNowBtn">Shop Now</button>
-</div>
-
-<div class="products" id="productsSection">
-    <div class="product-card" data-product="Apple AirPods Pro" data-price="199.99">
-        <img src="airpods1.jpg" alt="Apple AirPods">
-        <div class="content">
-            <h3>Apple AirPods Pro</h3>
-            <p>2<sup>nd</sup> and 3<sup>rd</sup> generation</p>
-            <p>$199.99</p>
-            <button>Add to Cart</button>
-        </div>
+    <div class="hero">
+        <h1>Premium AirPods at Unbeatable Prices</h1>
+        <p>Original Apple AirPods and alternatives like Depak AirPods, all in one place.</p>
+        <button id="shopNowBtn">Shop Now</button>
     </div>
-    <div class="product-card" data-product="Depak AirPods" data-price="49.99">
-        <img src="depak1.jpg" alt="Depak AirPods">
-        <div class="content">
-            <h3>Depak AirPods</h3>
-            <p>$49.99</p>
-            <button>Add to Cart</button>
-        </div>
-    </div>
-    <div class="product-card" data-product="Apple AirPods Max" data-price="345.99">
-        <img src="airpods2.jpg" alt="Apple AirPods">
-        <div class="content">
-            <h3>Apple AirPods Max</h3>
-            <p>$345.99</p>
-            <button>Add to Cart</button>
-        </div>
-    </div>
-</div>
 
-<footer>
-    &copy; 2024 AirPods Resale. All rights reserved.
-</footer>
-
-<script>
-    // Smooth scroll to products section
-    document.getElementById("shopNowBtn").addEventListener("click", function() {
-        document.getElementById("productsSection").scrollIntoView({ behavior: 'smooth' });
-    });
-
-    const cartLink = document.getElementById('cartLink');
-    const cartContent = [];
-
-    // Add items to the cart
-    document.querySelectorAll('.product-card button').forEach(button => {
-        button.addEventListener('click', (event) => {
-            const productCard = event.target.closest('.product-card');
-            const productName = productCard.dataset.product;
-            const productPrice = parseFloat(productCard.dataset.price);
-            cartContent.push({ name: productName, price: productPrice });
-            alert(`${productName} added to cart!`);
-        });
-    });
-
-    // Open the cart in a new window
-    cartLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        const cartWindow = window.open('', '_blank', 'width=400,height=600');
-        let cartHTML = `
-            <h1>Your Cart</h1>
-            <table border="1" style="width: 100%; text-align: left; border-collapse: collapse;">
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-        `;
-
-        let total = 0;
-        cartContent.forEach(item => {
-            cartHTML += `
-                <tr>
-                    <td>${item.name}</td>
-                    <td>$${item.price.toFixed(2)}</td>
-                </tr>
-            `;
-            total += item.price;
-        });
-
-        cartHTML += `
-                </tbody>
-            </table>
-            <h2>Total: $${total.toFixed(2)}</h2>
-            <button onclick="window.close()">Close</button>
-        `;
-
-        cartWindow.document.write(`
-            <html>
-                <head>
-                    <title>Cart</title>
-                </head>
-                <body style="font-family: Arial, sans-serif; padding: 20px;">
-                    ${cartHTML}
-                </body>
-            </html>
-        `);
-    });
-</script>
-</body> </html>
+    <div class="products" id="productsSection">
+        <div class="product-card" data-product="Apple AirPods Pro" data-price="199.99">
+            <img src="airpods1.jpg
