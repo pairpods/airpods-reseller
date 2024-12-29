@@ -68,11 +68,12 @@
         .hero button:hover {
             background-color: #005bb5;
         }
-         body {
+
+        body {
             margin: 0;
             font-family: Arial, sans-serif;
             color: #707070;
-            background-color: #707070; /* Set the main background color */
+            background-color: #707070;
         }
 
         .products {
@@ -126,6 +127,12 @@
             border-radius: 5px;
         }
 
+        .cart {
+            display: none;
+            padding: 2rem;
+            background-color: #f4f4f4;
+        }
+
         footer {
             background-color: #CCCCCC;
             padding: 1rem;
@@ -141,56 +148,9 @@
         <nav>
             <a href="#">Home</a>
             <a href="#">Products</a>
-            <a href="#">About</a>
+            <a href="#" id="cartLink">Cart</a>
             <a href="#">Contact</a>
         </nav>
     </header>
 
-    <div class="hero">
-        <h1>Premium AirPods at Unbeatable Prices</h1>
-        <p>Original Apple AirPods and alternatives like Depak AirPods, all in one place.</p>
-        <button>Shop Now</button>
-    </div>
-
-    <div class="products">
-        <div class="product-card">
-            <img src="airpods1.jpg" alt="Apple AirPods">
-            <div class="content">
-                <h3>Apple AirPods Pro</h3>
-                <p>2<sup2>nd</sup2> and 3<sup2>rd</sup2> generation</p>
-                <p>$199.99</p>
-                <button>Add to Cart</button>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="depak1.jpg" alt="Depak AirPods">
-            <div class="content">
-                <h3>Depak AirPods</h3>
-            
-                <p>$49.99</p>
-                <button>Add to Cart</button>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="airpods2.jpg" alt="Apple AirPods">
-            <div class="content">
-                <h3>Apple AirPods Max</h3>
-                <p>$345.99</p>
-                <button>Add to Cart</button>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        &copy; 2024 AirPods Resale. All rights reserved.
-    </footer>
-
-    <script>
-        document.querySelectorAll('.product-card button').forEach(button => {
-            button.addEventListener('click', () => {
-                alert('Item added to cart!');
-            });
-        });
-    </script>
-</body>
-</html>
+    <div cl
