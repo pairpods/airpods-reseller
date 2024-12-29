@@ -31,7 +31,7 @@
         }
 
         header nav a:hover {
-            color: #000000;
+            color: #0070f3;
         }
 
         .hero {
@@ -68,11 +68,12 @@
         .hero button:hover {
             background-color: #005bb5;
         }
-         body {
+
+        body {
             margin: 0;
             font-family: Arial, sans-serif;
             color: #707070;
-            background-color: #707070; /* Set the main background color */
+            background-color: #707070;
         }
 
         .products {
@@ -91,6 +92,7 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             background-color: #000000;
+            color: #fff;
         }
 
         .product-card:hover {
@@ -113,7 +115,6 @@
 
         .product-card p {
             margin: 0.5rem 0;
-            color: #666;
         }
 
         .product-card button {
@@ -153,25 +154,24 @@
     </div>
 
     <div class="products">
-        <div class="product-card">
+        <div class="product-card" data-product="Apple AirPods Pro" data-price="199.99">
             <img src="airpods1.jpg" alt="Apple AirPods">
             <div class="content">
                 <h3>Apple AirPods Pro</h3>
-                <p>2<sup2>nd</sup2> and 3<sup2>rd</sup2> generation</p>
+                <p>2<sup>nd</sup> and 3<sup>rd</sup> generation</p>
                 <p>$199.99</p>
                 <button>Add to Cart</button>
             </div>
         </div>
-        <div class="product-card">
+        <div class="product-card" data-product="Depak AirPods" data-price="49.99">
             <img src="depak1.jpg" alt="Depak AirPods">
             <div class="content">
                 <h3>Depak AirPods</h3>
-            
                 <p>$49.99</p>
                 <button>Add to Cart</button>
             </div>
         </div>
-        <div class="product-card">
+        <div class="product-card" data-product="Apple AirPods Max" data-price="345.99">
             <img src="airpods2.jpg" alt="Apple AirPods">
             <div class="content">
                 <h3>Apple AirPods Max</h3>
@@ -184,7 +184,8 @@
     <footer>
         &copy; 2024 AirPods Resale. All rights reserved.
     </footer>
-<script>
+
+    <script>
         const cartLink = document.getElementById('cartLink');
         const cartContent = [];
 
