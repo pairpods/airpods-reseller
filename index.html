@@ -1,9 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE
+html >
+  <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PairPods - Affordable Audio Excellence</title>
+    <title>PairPods - Affordable Audio Excellence | Premium AirPods & Alternatives</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Shop premium Apple AirPods and affordable alternatives like Depak AirPods at unbeatable prices. Free shipping, 30-day returns, and authentic products guaranteed.">
+    <meta name="keywords" content="AirPods, Apple AirPods Pro, Depak AirPods, wireless earbuds, AirPods Max, affordable earbuds, premium audio">
+    <meta property="og:title" content="PairPods - Premium Audio at Unbeatable Prices">
+    <meta property="og:description" content="Shop premium Apple AirPods and affordable alternatives with free shipping and 30-day returns.">
+    <meta property="og:image" content="pairpods-social.jpg">
+    <meta property="og:url" content="https://pairpods.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         /* Global Styles */
         header {
@@ -13,6 +24,9 @@
             padding: 1rem 2rem;
             background-color: #000000;
             border-bottom: 1px solid #000000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         header .logo {
@@ -26,6 +40,7 @@
             text-decoration: none;
             color: #FFFFFF;
             font-size: 1rem;
+            transition: color 0.3s ease;
         }
 
         header nav a:hover {
@@ -41,16 +56,37 @@
             height: 70vh;
             background: url('hero-image.jpg') center center/cover no-repeat;
             color: #fff;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
         }
 
         .hero h1 {
             font-size: 3rem;
             margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .hero p {
             margin: 1rem 0;
             font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         .hero button {
@@ -61,10 +97,12 @@
             font-size: 1rem;
             cursor: pointer;
             border-radius: 5px;
+            transition: all 0.3s ease;
         }
 
         .hero button:hover {
             background-color: #005bb5;
+            transform: scale(1.05);
         }
 
         body {
@@ -115,6 +153,33 @@
             margin: 0.5rem 0;
         }
 
+        .product-card .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #0070f3;
+        }
+
+        .product-card .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
+
+        .product-card .discount {
+            background-color: #ff3860;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+
+        .product-card .rating {
+            color: #ffd700;
+            margin: 5px 0;
+        }
+
         .product-card button {
             background-color: #0070f3;
             color: #fff;
@@ -123,42 +188,325 @@
             font-size: 1rem;
             cursor: pointer;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-card button:hover {
+            background-color: #005bb5;
+        }
+
+        .features-section {
+            background-color: #000000;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background-color: #111;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0070f3;
+        }
+
+        .testimonials {
+            padding: 3rem 2rem;
+            background-color: #555;
+            text-align: center;
+        }
+
+        .testimonial-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            scroll-snap-type: x mandatory;
+        }
+
+        .testimonial-card {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+            background-color: #000;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+        }
+
+        .newsletter {
+            background-color: #000;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 1.5rem auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .newsletter-form button {
+            background-color: #0070f3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .cart-badge {
+            position: relative;
+            display: inline-block;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #ff3860;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
         }
 
         footer {
             color: #000000;
             background-color: #707070;
-            padding: 1rem;
+            padding: 2rem 1rem;
             text-align: center;
             font-size: 0.9rem;
             border-top: 1px solid #707070;
         }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: #000;
+            font-size: 1.5rem;
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animated {
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* Limited Time Offer Banner */
+        .offer-banner {
+            background-color: #ff3860;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .trust-badge-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
     </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Limited Time Offer Banner -->
+    <div class="offer-banner">
+        🔥 LIMITED TIME OFFER: Use code AUDIO25 for 25% OFF all products + FREE shipping on orders over $100! Ends in <span id="countdown">23:59:59</span>
+    </div>
+
     <header>
         <div class="logo">PairPods</div>
         <nav>
             <a href="#" id="homeLink">Home</a>
             <a href="#productsSection">Products</a>
-            <a href="#" id="cartLink">Cart</a>
+            <a href="#" id="cartLink">
+                <div class="cart-badge">
+                    Cart <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </a>
             <a href="#">Contact</a>
         </nav>
     </header>
 
     <div class="hero">
-        <h1>Premium AirPods at Unbeatable Prices</h1>
-        <p>Original Apple AirPods and alternatives like Depak AirPods, all in one place.</p>
-        <button id="shopNowBtn">Shop Now</button>
+        <div class="hero-content animated">
+            <h1>Premium AirPods at Unbeatable Prices</h1>
+            <p>Original Apple AirPods and alternatives like Depak AirPods, all in one place.</p>
+            <p>Over 50,000+ satisfied customers and counting!</p>
+            <button id="shopNowBtn">Shop Now</button>
+        </div>
+    </div>
+
+    <!-- Trust Badges Section -->
+    <div class="trust-badges">
+        <div class="trust-badge">
+            <div class="trust-badge-icon"><i class="fas fa-truck"></i></div>
+            <div>Free Shipping</div>
+        </div>
+        <div class="trust-badge">
+            <div class="trust-badge-icon"><i class="fas fa-undo"></i></div>
+            <div>30-Day Returns</div>
+        </div>
+        <div class="trust-badge">
+            <div class="trust-badge-icon"><i class="fas fa-shield-alt"></i></div>
+            <div>Secure Checkout</div>
+        </div>
+        <div class="trust-badge">
+            <div class="trust-badge-icon"><i class="fas fa-check-circle"></i></div>
+            <div>Authentic Products</div>
+        </div>
     </div>
 
     <div class="products" id="productsSection">
         <div class="product-card" data-product="Apple AirPods Pro" data-price="199.99">
             <img src="airpods1.jpg" alt="Apple AirPods">
-            <div class=" content">
+            <div class="content">
                 <h3>Apple AirPods Pro</h3>
                 <p>2<sup>nd</sup> and 3<sup>rd</sup> generation</p>
-                <p>$199.99</p>
+                <div>
+                    <span class="original-price">$249.99</span>
+                    <span class="price">$199.99</span>
+                    <span class="discount">-20%</span>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(4,256 reviews)</span>
+                </div>
+                <p>Active Noise Cancellation, Transparency mode, Spatial Audio</p>
                 <button>Add to Cart</button>
             </div>
         </div>
@@ -166,7 +514,20 @@
             <img src="depak1.jpg" alt="Depak AirPods">
             <div class="content">
                 <h3>Depak AirPods</h3>
-                <p>$49.99</p>
+                <div>
+                    <span class="original-price">$79.99</span>
+                    <span class="price">$49.99</span>
+                    <span class="discount">-38%</span>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(2,187 reviews)</span>
+                </div>
+                <p>Bluetooth 5.0, Touch Control, 20h Battery Life</p>
                 <button>Add to Cart</button>
             </div>
         </div>
@@ -174,14 +535,141 @@
             <img src="airpods2.jpg" alt="Apple AirPods">
             <div class="content">
                 <h3>Apple AirPods Max</h3>
-                <p>$345.99</p>
+                <div>
+                    <span class="original-price">$549.99</span>
+                    <span class="price">$345.99</span>
+                    <span class="discount">-37%</span>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(1,843 reviews)</span>
+                </div>
+                <p>High-Fidelity Audio, Adaptive EQ, Premium Over-Ear Design</p>
                 <button>Add to Cart</button>
             </div>
         </div>
     </div>
 
+    <!-- Features Section -->
+    <div class="features-section">
+        <h2>Why Choose PairPods?</h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-headphones"></i></div>
+                <h3>Premium Sound Quality</h3>
+                <p>Experience crystal-clear audio with our carefully selected range of premium earbuds and headphones.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-dollar-sign"></i></div>
+                <h3>Best Price Guarantee</h3>
+                <p>We offer the most competitive prices on the market. Find it cheaper elsewhere? We'll match it!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                <h3>Authentic Products</h3>
+                <p>All our Apple products are 100% authentic with full warranty and support from Apple.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <div class="testimonial-text">"The sound quality of these AirPods Pro is incredible. PairPods delivered them quickly and they were exactly as described. Highly recommend!"</div>
+                <div class="testimonial-author">- Sarah J., Verified Buyer</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"I was skeptical about the Depak AirPods, but they're amazing for the price. Great battery life and sound quality that rivals the originals."</div>
+                <div class="testimonial-author">- Michael T., Verified Buyer</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"The AirPods Max I purchased from PairPods were significantly cheaper than Apple's store, and they're 100% authentic. Customer service was excellent too!"</div>
+                <div class="testimonial-author">- Jessica L., Verified Buyer</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="newsletter">
+        <h2>Get Exclusive Deals</h2>
+        <p>Subscribe to our newsletter and receive special offers, early access to sales, and $10 off your first purchase!</p>
+        <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
     <footer>
-        &copy; 2024 AirPods Resale. All rights reserved.
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="#">Apple AirPods</a></li>
+                    <li><a href="#">Depak AirPods</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p>Email: support@pairpods.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 AirPods Resale. All rights reserved.
+        </div>
     </footer>
 
     <script>
@@ -192,15 +680,29 @@
 
         const cartLink = document.getElementById('cartLink');
         const cartContent = [];
+        const cartCountElement = document.getElementById('cartCount');
 
         // Add items to the cart
         document.querySelectorAll('.product-card button').forEach(button => {
             button.addEventListener('click', (event) => {
                 const productCard = event.target.closest('.product-card');
                 const productName = productCard.dataset.product;
-                const productPrice = parseFloat(productCard.dataset.price);
+                const productPrice = Number.parseFloat(productCard.dataset.price);
                 cartContent.push({ name: productName, price: productPrice });
-                alert(`${productName} added to cart!`);
+                
+                // Update cart count
+                cartCountElement.textContent = cartContent.length;
+                
+                // Show add to cart animation
+                button.textContent = "Added!";
+                button.style.backgroundColor = "#4CAF50";
+                setTimeout(() => {
+                    button.textContent = "Add to Cart";
+                    button.style.backgroundColor = "#0070f3";
+                }, 1500);
+                
+                // Show notification
+                showNotification(`${productName} added to cart!`);
             });
         });
 
@@ -242,9 +744,43 @@
                 <html>
                     <head>
                         <title>Cart</title>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                padding: 20px;
+                                background-color: #f0f0f0;
+                            }
+                            h1 {
+                                color: #0070f3;
+                            }
+                            table {
+                                margin: 20px 0;
+                            }
+                            th, td {
+                                padding: 10px;
+                            }
+                            button {
+                                background-color: #0070f3;
+                                color: white;
+                                border: none;
+                                padding: 10px 15px;
+                                border-radius: 5px;
+                                cursor: pointer;
+                            }
+                            .checkout-btn {
+                                background-color: #4CAF50;
+                                margin-right: 10px;
+                            }
+                            .empty-cart {
+                                text-align: center;
+                                padding: 20px;
+                                color: #666;
+                            }
+                        </style>
                     </head>
-                    <body style="font-family: Arial, sans-serif; padding: 20px;">
-                        ${cartHTML}
+                    <body>
+                        ${cartContent.length > 0 ? cartHTML : '<div class="empty-cart"><h2>Your cart is empty</h2><p>Browse our products and add something to your cart!</p><button onclick="window.close()">Close</button></div>'}
+                        ${cartContent.length > 0 ? '<button class="checkout-btn" onclick="alert(\'Proceeding to checkout...\')">Proceed to Checkout</button>' : ''}
                     </body>
                 </html>
             `);
@@ -283,11 +819,42 @@
                             button:hover {
                                 background-color: #005bb5;
                             }
+                            .stats {
+                                background-color: #fff;
+                                padding: 15px;
+                                border-radius: 5px;
+                                margin: 20px 0;
+                                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                            }
+                            .stat-item {
+                                margin-bottom: 10px;
+                            }
+                            .stat-number {
+                                font-weight: bold;
+                                color: #0070f3;
+                            }
                         </style>
                     </head>
                     <body>
                         <h1>Welcome to the AirPods Resale World!</h1>
- <p>Discover the exciting opportunities in the AirPods resale market! Whether you're looking to sell your old pair or find a great deal on a new one, you're in the right place.</p>
+                        <p>Discover the exciting opportunities in the AirPods resale market! Whether you're looking to sell your old pair or find a great deal on a new one, you're in the right place.</p>
+                        
+                        <div class="stats">
+                            <h2>PairPods by the Numbers</h2>
+                            <div class="stat-item">
+                                <span class="stat-number">50,000+</span> satisfied customers worldwide
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">98.7%</span> positive customer reviews
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">24-hour</span> customer support
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">30-day</span> money-back guarantee
+                            </div>
+                        </div>
+                        
                         <p>Remember, the resale value of AirPods can vary based on their condition and model. Always check the authenticity of reviews and ratings to ensure you're making a wise purchase.</p>
                         <p>Join the community of savvy buyers and sellers who are enjoying the benefits of the AirPods resale market. Happy shopping!</p>
                         <button onclick="window.close()">Close</button>
@@ -295,6 +862,102 @@
                 </html>
             `);
         });
+
+        // Countdown timer for limited time offer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const timeLeft = endOfDay - now;
+            
+            const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft > 0) {
+                setTimeout(updateCountdown, 1000);
+            } else {
+                document.getElementById('countdown').textContent = "EXPIRED";
+            }
+        }
+        
+        updateCountdown();
+
+        // Newsletter form submission
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            showNotification(`Thank you! ${email} has been subscribed to our newsletter.`);
+            this.reset();
+        });
+
+        // Notification system
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            const margin = '20px';
+            const left = '20px';
+            const color = 'white';
+            const content = '12px 20px';
+            const position = 'fixed';
+
+            notification.style.position = position;
+            notification.style.bottom = margin;
+            notification.style.right = margin;
+            notification.style.backgroundColor = '#4CAF50';
+            notification.style.color = color;
+            notification.style.padding = content;
+            notification.style.borderRadius = '4px';
+            notification.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+            notification.style.zIndex = '1000';
+            notification.style.transition = 'all 0.3s ease';
+            notification.textContent = message;
+            
+            // Add to document
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Track user engagement for analytics
+        function trackEngagement(action, label) {
+            // This would normally send data to your analytics platform
+            console.log(`User engagement: ${action} - ${label}`);
+        }
+
+        // Track page view
+        trackEngagement('page_view', 'home_page');
+
+        // Track product views
+        const productObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const product = entry.target.querySelector('h3').textContent;
+                    trackEngagement('product_view', product);
+                    productObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            productObserver.observe(card);
+        });
+
+        // Track button clicks
+        document.getElementById('shopNowBtn').addEventListener('click', () => {
+            trackEngagement('button_click', 'shop_now');
+        });
     </script>
 </body>
 </html>
+
