@@ -14,7 +14,7 @@ html >
     <meta property="og:url" content="https://pairpods.com">
     <meta name="twitter:card" content="summary_large_image">
     <!-- Favicon -->
-    <link rel="icon" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-22%20145529-pnJnjkxMpqBD7yXz1qumNsl1GwsBNF.png" type="image/png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         /* Global Styles */
         header {
@@ -33,14 +33,6 @@ html >
             font-size: 1.5rem;
             font-weight: bold;
             color: #CCCCCC;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        header .logo img {
-            height: 40px;
-            margin-right: 10px;
         }
 
         header nav a {
@@ -110,6 +102,7 @@ html >
 
         .hero button:hover {
             background-color: #005bb5;
+            transform: scale(1.05);
         }
 
         body {
@@ -154,11 +147,6 @@ html >
 
         .product-card h3 {
             margin: 0.5rem 0;
-            background: linear-gradient(145deg, #e6e6e6, #cccccc, #e6e6e6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0px 0px 1px rgba(150, 150, 150, 0.5);
         }
 
         .product-card p {
@@ -417,6 +405,15 @@ html >
             animation: fadeIn 1s ease-in;
         }
 
+        /* Limited Time Offer Banner */
+        .offer-banner {
+            background-color: #ff3860;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
         /* Trust Badges */
         .trust-badges {
             display: flex;
@@ -437,60 +434,21 @@ html >
             font-size: 2rem;
             margin-bottom: 0.5rem;
         }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .modal-content {
-            background-color: #f0f0f0;
-            margin: 10% auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            animation: modalFadeIn 0.3s;
-        }
-
-        @keyframes modalFadeIn {
-            from {opacity: 0; transform: translateY(-50px);}
-            to {opacity: 1; transform: translateY(0);}
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-        }
     </style>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Limited Time Offer Banner -->
+    <div class="offer-banner">
+        🔥 LIMITED TIME OFFER: Use code AUDIO25 for 25% OFF all products + FREE shipping on orders over $100! Ends in <span id="countdown">23:59:59</span>
+    </div>
+
     <header>
-        <a href="https://pairpods.com" class="logo">
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-22%20144937-knmBIijPiCOh5tiLAshQLicCSdnKoQ.png" alt="PairPods Logo">
-        </a>
+        <div class="logo">PairPods</div>
         <nav>
             <a href="#" id="homeLink">Home</a>
-            <a href="#productsSection" id="productsLink">Products</a>
+            <a href="#productsSection">Products</a>
             <a href="#" id="cartLink">
                 <div class="cart-badge">
                     Cart <span class="cart-count" id="cartCount">0</span>
@@ -714,47 +672,10 @@ html >
         </div>
     </footer>
 
-    <!-- Home Modal -->
-    <div id="homeModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h1>Welcome to the AirPods Resale World!</h1>
-            <p>Discover the exciting opportunities in the AirPods resale market! Whether you're looking to sell your old pair or find a great deal on a new one, you're in the right place.</p>
-            
-            <div class="stats">
-                <h2>PairPods by the Numbers</h2>
-                <div class="stat-item">
-                    <span class="stat-number">50,000+</span> satisfied customers worldwide
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">98.7%</span> positive customer reviews
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">24-hour</span> customer support
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">30-day</span> money-back guarantee
-                </div>
-            </div>
-            
-            <p>Remember, the resale value of AirPods can vary based on their condition and model. Always check the authenticity of reviews and ratings to ensure you're making a wise purchase.</p>
-            <p>Join the community of savvy buyers and sellers who are enjoying the benefits of the AirPods resale market. Happy shopping!</p>
-        </div>
-    </div>
-
     <script>
         // Smooth scroll to products section
         document.getElementById("shopNowBtn").addEventListener("click", function() {
             document.getElementById("productsSection").scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Products link smooth scroll
-        document.getElementById("productsLink").addEventListener("click", function(e) {
-            e.preventDefault();
-            document.getElementById("productsSection").scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
         });
 
         const cartLink = document.getElementById('cartLink');
@@ -767,11 +688,7 @@ html >
                 const productCard = event.target.closest('.product-card');
                 const productName = productCard.dataset.product;
                 const productPrice = Number.parseFloat(productCard.dataset.price);
-                cartContent.push({ 
-                    id: Date.now(), // Unique ID for each item
-                    name: productName, 
-                    price: productPrice 
-                });
+                cartContent.push({ name: productName, price: productPrice });
                 
                 // Update cart count
                 cartCountElement.textContent = cartContent.length;
@@ -800,19 +717,17 @@ html >
                         <tr>
                             <th>Item</th>
                             <th>Price</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody id="cartItems">
+                    <tbody>
             `;
 
             let total = 0;
             cartContent.forEach(item => {
                 cartHTML += `
-                    <tr id="item-${item.id}">
+                    <tr>
                         <td>${item.name}</td>
                         <td>$${item.price.toFixed(2)}</td>
-                        <td><button class="remove-btn" data-id="${item.id}">Remove</button></td>
                     </tr>
                 `;
                 total += item.price;
@@ -821,7 +736,7 @@ html >
             cartHTML += `
                     </tbody>
                 </table>
-                <h2 id="cartTotal">Total: $${total.toFixed(2)}</h2>
+                <h2>Total: $${total.toFixed(2)}</h2>
                 <button onclick="window.close()">Close</button>
             `;
 
@@ -861,98 +776,116 @@ html >
                                 padding: 20px;
                                 color: #666;
                             }
-                            .remove-btn {
-                                background-color: #ff3860;
-                                color: white;
-                                padding: 5px 10px;
-                                font-size: 0.8rem;
-                                border-radius: 3px;
-                            }
-                            .remove-btn:hover {
-                                background-color: #e61a4d;
-                            }
                         </style>
                     </head>
                     <body>
                         ${cartContent.length > 0 ? cartHTML : '<div class="empty-cart"><h2>Your cart is empty</h2><p>Browse our products and add something to your cart!</p><button onclick="window.close()">Close</button></div>'}
                         ${cartContent.length > 0 ? '<button class="checkout-btn" onclick="alert(\'Proceeding to checkout...\')">Proceed to Checkout</button>' : ''}
-                        
-                        <script>
-                            // Remove item functionality
-                            document.querySelectorAll('.remove-btn').forEach(btn => {
-                                btn.addEventListener('click', function() {
-                                    const itemId = this.getAttribute('data-id');
-                                    const row = document.getElementById('item-' + itemId);
-                                    
-                                    // Remove from DOM
-                                    row.remove();
-                                    
-                                    // Send message to parent window to update cart
-                                    window.opener.postMessage({
-                                        action: 'removeItem',
-                                        itemId: itemId
-                                    }, '*');
-                                    
-                                    // Recalculate total
-                                    let newTotal = 0;
-                                    document.querySelectorAll('#cartItems tr').forEach(row => {
-                                        const priceText = row.cells[1].textContent;
-                                        const price = Number.parseFloat(priceText.replace('$', ''));
-                                        newTotal += price;
-                                    });
-                                    
-                                    document.getElementById('cartTotal').textContent = 'Total: $' + newTotal.toFixed(2);
-                                    
-                                    // Show empty cart message if no items left
-                                    if (document.querySelectorAll('#cartItems tr').length === 0) {
-                                        document.body.innerHTML = '<div class="empty-cart"><h2>Your cart is empty</h2><p>Browse our products and add something to your cart!</p><button onclick="window.close()">Close</button></div>';
-                                    }
-                                });
-                            });
-                        </script>
                     </body>
                 </html>
             `);
         });
 
-        // Listen for messages from cart window
-        window.addEventListener('message', function(event) {
-            if (event.data.action === 'removeItem') {
-                const itemId = parseInt(event.data.itemId);
-                
-                // Find and remove the item from cartContent
-                const itemIndex = cartContent.findIndex(item => item.id === itemId);
-                if (itemIndex !== -1) {
-                    cartContent.splice(itemIndex, 1);
-                    
-                    // Update cart count
-                    cartCountElement.textContent = cartContent.length;
-                    
-                    // Show notification
-                    showNotification('Item removed from cart!');
-                }
+        // Open a new window with AirPods resale information when Home is clicked
+        document.getElementById('homeLink').addEventListener('click', (event) => {
+            event.preventDefault();
+            const homeWindow = window.open('', '_blank', 'width=600,height=400');
+            homeWindow.document.write(`
+                <html>
+                    <head>
+                        <title>AirPods Resale Information</title>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                padding: 20px;
+                                background-color: #f0f0f0;
+                                color: #333;
+                            }
+                            h1 {
+                                color: #0070f3;
+                            }
+                            p {
+                                margin: 10px 0;
+                                line-height: 1.5;
+                            }
+                            button {
+                                background-color: #0070f3;
+                                color: #fff;
+                                border: none;
+                                padding: 10px 15px;
+                                cursor: pointer;
+                                border-radius: 5px;
+                            }
+                            button:hover {
+                                background-color: #005bb5;
+                            }
+                            .stats {
+                                background-color: #fff;
+                                padding: 15px;
+                                border-radius: 5px;
+                                margin: 20px 0;
+                                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                            }
+                            .stat-item {
+                                margin-bottom: 10px;
+                            }
+                            .stat-number {
+                                font-weight: bold;
+                                color: #0070f3;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>Welcome to the AirPods Resale World!</h1>
+                        <p>Discover the exciting opportunities in the AirPods resale market! Whether you're looking to sell your old pair or find a great deal on a new one, you're in the right place.</p>
+                        
+                        <div class="stats">
+                            <h2>PairPods by the Numbers</h2>
+                            <div class="stat-item">
+                                <span class="stat-number">50,000+</span> satisfied customers worldwide
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">98.7%</span> positive customer reviews
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">24-hour</span> customer support
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">30-day</span> money-back guarantee
+                            </div>
+                        </div>
+                        
+                        <p>Remember, the resale value of AirPods can vary based on their condition and model. Always check the authenticity of reviews and ratings to ensure you're making a wise purchase.</p>
+                        <p>Join the community of savvy buyers and sellers who are enjoying the benefits of the AirPods resale market. Happy shopping!</p>
+                        <button onclick="window.close()">Close</button>
+                    </body>
+                </html>
+            `);
+        });
+
+        // Countdown timer for limited time offer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const timeLeft = endOfDay - now;
+            
+            const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft > 0) {
+                setTimeout(updateCountdown, 1000);
+            } else {
+                document.getElementById('countdown').textContent = "EXPIRED";
             }
-        });
-
-        // Home modal functionality
-        const modal = document.getElementById("homeModal");
-        const homeLink = document.getElementById("homeLink");
-        const closeBtn = document.getElementsByClassName("close")[0];
-
-        homeLink.addEventListener("click", function(e) {
-            e.preventDefault();
-            modal.style.display = "block";
-        });
-
-        closeBtn.addEventListener("click", function() {
-            modal.style.display = "none";
-        });
-
-        window.addEventListener("click", function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        });
+        }
+        
+        updateCountdown();
 
         // Newsletter form submission
         document.getElementById('newsletterForm').addEventListener('submit', function(e) {
@@ -966,12 +899,18 @@ html >
         function showNotification(message) {
             // Create notification element
             const notification = document.createElement('div');
-            notification.style.position = 'fixed';
-            notification.style.bottom = '20px';
-            notification.style.right = '20px';
+            const margin = '20px';
+            const left = '20px';
+            const color = 'white';
+            const content = '12px 20px';
+            const position = 'fixed';
+
+            notification.style.position = position;
+            notification.style.bottom = margin;
+            notification.style.right = margin;
             notification.style.backgroundColor = '#4CAF50';
-            notification.style.color = 'white';
-            notification.style.padding = '12px 20px';
+            notification.style.color = color;
+            notification.style.padding = content;
             notification.style.borderRadius = '4px';
             notification.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
             notification.style.zIndex = '1000';
@@ -1021,4 +960,3 @@ html >
     </script>
 </body>
 </html>
-
